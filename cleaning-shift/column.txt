@@ -1,0 +1,55 @@
+import i18n from '@/lang'
+import type { ColumnTable } from '@/interface'
+import EditColumn from '@/components/common/TableData/EditColumn.vue'
+import StatusColumn from '@/components/common/TableData/StatusColumn.vue'
+
+const { t } = i18n
+
+export const column: ColumnTable[] = [
+    {
+        title: t('staff.list.column.id'),
+        dataIndex: 'id',
+        key: 'id',
+        sorter: true,
+        align: 'center',
+        width: '15%'
+    },
+    {
+        title: t('staff.list.column.name'),
+        dataIndex: 'name',
+        key: 'name',
+        sorter: false,
+        align: 'center',
+    },
+    {
+        title: t('staff.list.column.createdAt'),
+        dataIndex: 'created_at',
+        key: 'createdAt',
+        sorter: false,
+        align: 'center',
+    },
+    {
+        title: t('staff.list.column.numberClear'),
+        key: '',
+        sorter: false,
+        align: 'center',
+    },
+    {
+        title: t('staff.list.column.status'),
+        key: 'status',
+        align: 'center',
+        className: 'case',
+        customRender: ({ text }: any) => <StatusColumn status={text.status} />,
+    },
+    {
+        title: t('staff.list.column.edit'),
+        key: 'operation',
+        align: 'center',
+        customRender: ({ text }: any) => (
+            <EditColumn
+                text={t('staff.list.column.edit')}
+                url={'/staff/' + text.id}
+            />
+        ),
+    },
+]

@@ -1,0 +1,137 @@
+<style scoped lang="scss">
+.ant-group-btn {
+    justify-content: flex-start !important;
+    margin-bottom: 14px;
+    margin-left: 10px;
+}
+
+.form-vertical {
+    padding-left: 28px;
+    .ant-form-item {
+        margin: 0;
+    }
+
+    .ant-group-btn {
+        margin-top: 19px;
+    }
+}
+
+.gutter-row {
+    .search-input {
+        width: 36.5%;
+        border-radius: 100px;
+        font-family: 'Noto Sans JP';
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0em;
+        border: 1px solid var(--vt-c-main);
+        color: var(--vt-c-gray-v10);
+        span {
+            color: var(--vt-c-main);
+            font-size: 26px;
+        }
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+
+        .created-at,
+        .status {
+            .title {
+                font-family: 'Noto Sans JP';
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0em;
+                color: var(--vt-c-gray-v10);
+
+                p {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
+        .created-at {
+            margin-right: 65px;
+            width: 35%;
+            .title {
+                margin: 12px 0 0 15px;
+            }
+
+            .input-warper {
+                display: flex;
+                align-items: center;
+                input {
+                    width: 150px;
+                    height: 44px;
+                    border: 1px;
+                    font-family: 'Noto Sans JP';
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    letter-spacing: 0em;
+                    border: 1px solid var(--vt-c-white-v3);
+                    outline: none;
+
+                    &::placeholder {
+                        font-family: 'Noto Sans JP';
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        letter-spacing: 0em;
+                        color: var(--vt-c-gray-v10);
+                    }
+
+                    &:hover {
+                        border: 1px solid var(--vt-c-main);
+                    }
+                }
+
+                .icon {
+                    margin: 0 12px;
+                    color: var(--vt-c-gray-v10);
+                }
+
+                .ant-picker {
+                    border: 1px solid var(--vt-c-white-v3);
+                    height: 44px;
+                    &:hover {
+                        border: 1px solid var(--vt-c-main);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .status {
+            .title {
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+.ant-group-btn {
+    .ant-space-item {
+        .submit {
+            background: var(--vt-c-main);
+        }
+
+        .reset {
+            background: var(--vt-c-gray-v11);
+        }
+
+        button {
+            font-family: 'Noto Sans JP';
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 19px;
+            letter-spacing: 0em;
+            color: var(--vt-c-white);
+            border: none;
+        }
+    }
+}
+</style>
