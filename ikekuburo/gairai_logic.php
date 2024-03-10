@@ -411,8 +411,8 @@ class gairai_logic
 		$result = '';
 		$column = 6;
 		for ($i = 0; $i < count($data); $i++) {
-			for ($j = 0; $j < $column; $j++) {
-				$result .= '<td>' . htmlspecialchars_decode($data[$i][$j]) . '</td>';
+			for ($j = 1; $j <= $column; $j++) {
+				$result .= '<td>' . htmlspecialchars_decode($data[$i][$type . '_week_' . $j]) . '</td>';
 			}
 			$result .= '</tr>';
 		}
@@ -424,13 +424,16 @@ class gairai_logic
 		$result = array();
 		foreach ($data as $value) {
 			$data_fields = array_intersect_key($value, array_flip($fields));
-			$subArrays = array_map('explode', array_fill(0, count($data_fields), ','), $data_fields);
+			$subArrays = array();
+			foreach ($data_fields as $key => $value) {
+				$subArrays[$key] = explode(',', $value);
+			}
 			$maxCount = max(array_map('count', $subArrays));
 			for ($i = 0; $i < $maxCount; $i++) {
 				$newRow = array_map(function ($subArray) use ($i) {
 					return isset($subArray[$i]) ? $subArray[$i] : '';
 				}, $subArrays);
-				$result[] = $newRow;
+				array_push($result, $newRow);
 			}
 		}
 		return $result;
